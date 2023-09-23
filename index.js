@@ -1,12 +1,12 @@
-import express from "express";
-import cors from "cors";
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-export const users = [
+const users = [
   {
     id: 1,
     img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
