@@ -151,3 +151,29 @@ export const users = [
     createdAt: "01.02.2023",
   },
 ];
+
+// GET USERS
+app.get("/api/users", (req, res) => {
+  res.json(users);
+});
+
+// GET SINGLE USER
+app.get("/api/users/:id", (req, res) => {
+  const user = users.find((user) => user.id === parseInt(req.params.id));
+  res.json(user);
+});
+
+// ADD USER
+app.post("/api/users", (req, res) => {
+  users.unshift(req.body);
+  res.json(users);
+});
+
+// DELETE USER
+app.delete("/api/users/:id", (req, res) => {
+    users = users.filter((user) => user.id !== preseInt(req.params.id));
+});
+
+app.listen(8800, () => {
+    console.log("Connected to backend..");
+});
